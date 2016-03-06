@@ -1,0 +1,17 @@
+// requirements 
+// aws cli has to be installed 
+// working credentials file ~/.aws/credentials
+
+{
+    "version": "0.1.0",
+    "command": "aws",
+    "taskName": "validate-template",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "args": [
+        "cloudformation",
+        "validate-template",
+        "--template-body",
+        "file://${file}"
+    ]
+}

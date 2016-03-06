@@ -1,0 +1,37 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "S3 log bucket. After enabling bucket logging, S3 access logs will be saved there.",
+    "Parameters": {
+        "LogBucketName": {
+            "Description": "Log Bucket Name",
+            "Type": "String",
+            "Default": "my-s3-log-bucket"
+        }
+    },
+    "Resources": {
+        "LogBucket": {
+            "Type": "AWS::S3::Bucket",
+            "DeletionPolicy" : "Retain",
+            "Properties": {
+                "AccessControl": "LogDeliveryWrite",
+                "BucketName": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            "my-s3-log-bucket",
+                            "-",
+                            {
+                                "Ref": "AWS::AccountId"
+                            },
+                            "-",
+                            {
+                                "Ref": "AWS::Region"
+                            }
+                        ]
+                    ]
+                }
+            }
+        }
+    },
+    "Outputs": {}
+}
