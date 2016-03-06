@@ -8,7 +8,7 @@ Goal is to have a service which will enforce S3 server access logging on each of
 
 Following these steps, you will programmatically create necessary AWS components with continuously running Lambda service.
 
-![AWS Lambda: Enable S3 bucket logging](http://github.com/aws-scripting-guy/lambda/enable_bucket_logging/.assets/AWS%20Lambda-%20Enable%20S3%20bucket%20logging.png)
+![AWS Lambda: Enable S3 bucket logging](https://raw.githubusercontent.com/aws-scripting-guy/lambda/master/enable_bucket_logging/.assets/AWS%20Lambda-Enable%20S3%20bucket%20logging.png)
 
 
 **Prerequisities**
