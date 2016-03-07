@@ -21,13 +21,15 @@ Following these steps, you will programmatically create necessary AWS components
 **Notes**
 ---------
 Defaults:
-* Log bucket name ```my-s3-log-bucket-ACCOUNT_ID-REGION```.
+* Log bucket name format```my-s3-log-bucket-ACCOUNT_ID-REGION```.
 * Default region ```eu-west-1``` (Ireland)
 
 Deployment scripts support additional regions. Please note that Lambda, CloudFormation and CloudWatch Events should be supported in the region. You can pass any of supported regions as parameter value:
 ```
 ./scripts/provision_log_buckets.ps1 us-east-1 my-s3-log-bucket
 ```
+
+Suggested is to leave **my-s3-log-bucket** as a log bucket name for this release.
 
 **Steps**
 ---------
@@ -49,7 +51,7 @@ cd enable_bucket_logging
 
 * Deploy logging buckets
 ```
-./scripts/provision_log_buckets.ps1 <region_name> <new_log_bucket_name>
+./scripts/provision_log_buckets.ps1 <region_name> my-s3-log-bucket
 # Output
 "arn:aws:cloudformation:eu-west-1:208046276943:stack/srv-S3-log-buckets/b90941e0-e279-11e5-9e
 d5-50a68645aed2"
